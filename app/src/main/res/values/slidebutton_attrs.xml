@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="slideButton">
+
+        <attr name="orientation" >
+            <!-- the switch moves only on the x-axis(horizontally) -->
+            <enum name="horizontal" value="0" />
+            <!-- the switch moves only on the y-axis(vertically) -->
+            <enum name="vertical" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+</resources>

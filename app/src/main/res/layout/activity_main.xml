@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="it.aldea.demo.MainActivity"
+    style="@style/Theme.AppCompat.DayNight.DarkActionBar"
+    android:background="@color/abc_input_method_navigation_guard">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <!--<it.aldea.android.widget.SlideButton-->
+        <!--android:id="@+id/unlockButton"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:clickable="false"-->
+        <!--android:max="100"-->
+        <!--android:progressDrawable="@android:color/transparent"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@drawable/slide_background_red"-->
+        <!--android:thumb="@drawable/slide_arrow_small"-->
+        <!--android:thumbOffset="2dp">-->
+    <!--</it.aldea.android.widget.SlideButton>-->
+
+</RelativeLayout>
