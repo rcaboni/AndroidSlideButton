@@ -13,6 +13,7 @@ import it.aldea.demo.R;
 
 /**
  * Created by Roberto on 08/04/2016.
+ * 06.01.2017 Fix onSizeChanged, don't show thumb correct in Android >= 6.0
  */
 public class SlideButton extends SeekBar {
     public static final int ORIENTATION_HORIZONTAL = 0;
@@ -28,7 +29,7 @@ public class SlideButton extends SeekBar {
     public SlideButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs,defStyle);
         //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.slideButton, defStyle, 0);
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.slideButton);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.slideButton);
         orientation = a.getInteger(R.styleable.slideButton_orientation, ORIENTATION_HORIZONTAL);
         a.recycle();
     }
@@ -52,7 +53,11 @@ public class SlideButton extends SeekBar {
         super.onDraw(c);
     }
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(h, w, oldh, oldw);
+        if (orientation == ORIENTATION_VERTICAL) {
+            super.onSizeChanged(h, w, oldh, oldw);
+        }else {
+            super.onSizeChanged( w,h,oldw, oldh);
+        }
     }
 
 
@@ -68,8 +73,6 @@ public class SlideButton extends SeekBar {
         }
         if (orientation == ORIENTATION_HORIZONTAL) {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                int x= (int) event.getX();
-                int y= (int) event.getY();
                 if (thumb.getBounds().contains((int) event.getX(), (int) event.getY())) {
                     super.onTouchEvent(event);
                 } else
